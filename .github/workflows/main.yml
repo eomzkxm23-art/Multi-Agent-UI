@@ -55,6 +55,8 @@ jobs:
           docker logout
 
       - name: Run container
+        env:
+          REPO_USER: ${{ secrets.REPO_USER }}
         run: |
           docker-compose up -d
 
